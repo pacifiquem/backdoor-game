@@ -1,0 +1,27 @@
+name: Auto Assign on Checkbox
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  issues:
+    types: [opened, edited]
+
+jobs:
+  auto_assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if Checkbox is Marked
+        run: |
+          checkbox_marked=$(gh pr view -s "body.includes('Does this has anything to do with /impl directory?')" --json body --jq ".[]")
+
+          if [ -n "$checkbox_marked" ]; then
+            echo "CheckboxMarked=true" >> $GITHUB_ENV
+          else
+            echo "CheckboxMarked=false" >> $GITHUB_ENV
+          fi
+
+      - name: Assign Issue
+        if: env.CheckboxMarked == 'true'
+        run: |
+          gh pr edit $GITHUB_REF --add-assignees pacifiquem
+          echo "Assigned issue to pacifiquem"
