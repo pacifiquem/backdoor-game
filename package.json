@@ -1,31 +1,15 @@
 {
   "name": "backdoor-game",
-  "version": "0.0.0",
-  "description": "using connect-4-game to perform reverse-shell attack",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "bin": {
-    "connect-four-duel": "./index.js"
-  },
   "scripts": {
-    "test": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pacifiquem/backdoor-game.git"
-  },
-  "keywords": [
-    "connect",
-    "4",
-    "game",
-    "connect-4-game",
-    "cli",
-    "backdoor",
-    "reverse-shell"
-  ],
-  "author": "pacifiquem@github.com && wanna get to me in terminal? hit: npx pacifiquem",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pacifiquem/backdoor-game/issues"
-  },
-  "homepage": "https://github.com/pacifiquem/backdoor-game#readme"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
 }
